@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Your Website</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      /* Responsive styles */
+      @media (max-width: 768px) {
+        /* Mobile view */
+        .flex-col {
+          flex-direction: column;
+        }
+        .h-auto {
+          height: auto;
+        }
+        .w-full {
+          width: 100%;
+        }
+        .p-2 {
+          padding: 0.5rem;
+        }
+        .text-sm {
+          font-size: 0.875rem;
+        }
+      }
+    </style>
+  </head>
+  <body
+    class="bg-cover bg-center h-screen flex flex-col"
+    style="background-image: ('https://placehold.co/1200x800')"
+  >
+    <header
+      class="flex justify-between items-center p-4 bg-black bg-opacity-50 text-white"
+    >
+      <div class="space-y-2">
+        <button
+          id="menuToggle"
+          class="p-2 rounded-md focus:outline-none focus:bg-white focus:text-black"
+          onclick="toggleMenu()"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-6 w-6"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M4 6h16M4 12h16m-7 6h7"
+            />
+          </svg>
+        </button>
+        <div
+          id="menu"
+          class="hidden absolute bg-white p-4 rounded-md shadow-lg w-full md:w-auto"
+        >
+          <ul class="flex flex-col md:flex-row">
+            <li><a href="#" class="block py-2 hover:text-blue-500 text-black">Home</a></li>
+            <li>
+              <a href="#" class="block py-2 hover:text-blue-500 text-black">Contact</a>
+            </li>
+            <li>
+              <a href="#" class="block py-2 hover:text-blue-500 text-black">Projects</a>
+            </li>
+            <li>
+              <a href="#" class="block py-2 hover:text-blue-500 text-black">Portfolio</a>
+            </li>
+            <li><a href="#" class="block py-2 hover:text-blue-500 text-black">Form</a></li>
+          </ul>
+        </div>
+
+        <script>
+          function toggleMenu() {
+            const menu = document.getElementById("menu");
+            menu.classList.toggle("hidden");
+          }
+        </script>
+      </div>
+      <h1 class="text-xl md:text-2xl">
+        <img src="long-black.png" alt="" style="height: 60px; width:150px" />
+      </h1>
+
+      <div class="flex space-x-4">
+        <a href="#" class="hover:text-zinc-300">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-6 w-6"
+            fill="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M22.675 0H1.325C.593 0 0 .593 0 1.325v21.351C0 23.407.593 24 1.325 24H12.82v-9.294H9.692v-3.622h3.128V8.413c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.795.143v3.24l-1.918.001c-1.504 0-1.795.715-1.795 1.763v2.313h3.587l-.467 3.622h-3.12V24h6.116c.73 0 1.323-.593 1.323-1.325V1.325C24 .593 23.407 0 22.675 0z"
+            />
+          </svg>
+        </a>
+
+        <a href="#" class="hover:text-zinc-300">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-6 w-6"
+            fill="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M19.05 4.91A9.816 9.816 0 0 0 12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01zm-7.01 15.24c-1.38 0-2.72-.37-3.9-1.07l-2.8.73 .72-2.67c-.8-1.23-1.24-2.68-1.24-4.23 0-4.41 3.59-8 8-8 2.13 0 4.14.82 5.64 2.32 1.5 1.5 2.32 3.51 2.32 5.64 0 4.42-3.59 8-8 8z"
+            />
+          </svg>
+        </a>
+
+        <a href="#" class="hover:text-zinc-300">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-6 w-6"
+            fill="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-2.717 0-4.92 2.203-4.92 4.917 0 .39.045.765.127 1.124C7.691 8.094 4.066 6.13 1.64 3.161c-.427.722-.666 1.561-.666 2.475 0 1.71.87 3.213 2.188 4.096-.807-.026-1.566-.248-2.228-.616v.061c0 2.385 1.693 4.374 3.946 4.827-.413.111-.849.171-1.296.171-.314 0-.615-.03-.916-.086.631 1.953 2.445 3.377 4.604 3.417-1.68 1.319-3.809 2.105-6.102 2.105-.39 0-.779-.023-1.17-.067 2.189 1.394 4.768 2.209 7.557 2.209 9.054 0 13.999-7.496 13.999-13.986 0-.209 0-.42-.015-.63.961-.689 1.8-1.56 2.46-2.548l-.047-.02z"
+            />
+          </svg>
+        </a>
+
+        <a href="#" class="hover:text-zinc-300">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-6 w-6"
+            fill="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162 0 3.403 2.759 6.162 6.162 6.162 3.403 0 6.162-2.759 6.162-6.162 0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"
+            />
+          </svg>
+        </a>
+      </div>
+    </header>
+    <div class="flex-1 flex justify-center items-center">
+      <h1 class="text-5xl text-black text-center font-bold md:text-4xl">
+        Welcome to Our Website
+      </h1>
+    </div>
+
+    <footer
+      class="p-4 bg-black bg-opacity-50 text-white flex flex-col md:flex-row justify-between items-center"
+    >
+      <p class="text-sm md:text-base">© 2023 970 Technologies</p>
+      <button
+        class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-2 md:mt-0"
+      >
+        More Info
+      </button>
+      <div class="flex mt-2 md:mt-0">
+        <button
+          class="bg-zinc-300 hover:bg-zinc-400 text-black py-2 px-4 rounded-l"
+        >
+          <span>&laquo; Prev</span>
+        </button>
+        <button
+          class="bg-zinc-300 hover:bg-zinc-400 text-black py-2 px-4 rounded-r"
+        >
+          <span>Next &raquo;</span>
+        </button>
+      </div>
+    </footer>
+  </body>
+</html>
